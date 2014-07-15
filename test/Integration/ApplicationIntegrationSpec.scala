@@ -15,7 +15,7 @@ class ApplicationIntegrationSpec extends Specification {
 
       browser.goTo("http://localhost:" + port)
 
-      browser.pageSource must contain("Your new application is ready.")
+      browser.pageSource must contain("Welcome to the Customer Repository")
     }
   }
 }
