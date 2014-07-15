@@ -11,11 +11,12 @@ class CustomerRepositoryIntegrationSpec extends Specification {
 
   "Customer Repository" should {
 
-    "work from within a browser" in new WithBrowser {
+    "display the page" in new WithBrowser {
+      val customerRepository = "http://localhost:" + port + "/customer-repository"
 
-      browser.goTo("http://localhost:" + port)
+      browser.goTo(customerRepository)
 
-      browser.pageSource must contain("Welcome to the customer repository")
+      browser.pageSource must contain("Add a new customer")
     }
   }
 }

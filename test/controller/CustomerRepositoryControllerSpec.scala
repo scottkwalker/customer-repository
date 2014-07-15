@@ -6,14 +6,15 @@ import org.junit.runner._
 
 import play.api.test._
 import play.api.test.Helpers._
+import controllers.CustomerRepository
 
 @RunWith(classOf[JUnitRunner])
 class CustomerRepositoryControllerSpec extends Specification {
 
   "Customer Repository" should {
-
-    "send 404 on a bad request" in new WithApplication{
-      route(FakeRequest(GET, "/boum")) must beNone
+    "display the page" in new WithApplication{
+      val result = CustomerRepository.present(FakeRequest())
+      status(result) should beEqualTo(OK)
     }
   }
 }
