@@ -1,7 +1,31 @@
-@(message: String)
+@(customers: List[Customer], customerForm: Form[String])
 
-@main("Welcome to Play") {
+@import helper._
 
-    @play20.welcome(message)
+@main("Customer list") {
+
+<h1>@customers.size customer(s)</h1>
+
+<ul>
+    @customers.map { customer =>
+    <li>
+        <p>@customer.firstName</p>p>
+
+        @form(routes.Application.deleteCustomer(customer.id)) {
+        <input type="submit" value="Delete">
+        }
+    </li>
+    }
+</ul>
+
+<h2>Add a new customer</h2>
+
+@form(routes.Application.newCustomer) {
+
+@inputText(customerForm("firstName"))
+
+<input type="submit" value="Create">
+
+}
 
 }
