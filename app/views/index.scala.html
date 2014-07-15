@@ -13,7 +13,7 @@
                 <li>
                     <p>@customer.firstName</p>p>
 
-                    @form(routes.Application.deleteCustomer(customer.id)) {
+                    @form(routes.CustomerRepository.deleteCustomer(customer.id)) {
                     <div class="btn-group">
                         <input type="submit" class="form-control" value="Delete">
                     </div>
@@ -26,7 +26,7 @@
         <div class="form-group">
             <h2>Add a new customer</h2>
 
-            @form(routes.Application.newCustomer) {
+            @form(routes.CustomerRepository.newCustomer) {
             <div class="input-group">
                 @helper.inputText(customerForm("firstName"), 'id -> "username", 'class -> "form-control", 'placeholder -> "Your first name")
             </div>
