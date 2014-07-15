@@ -12,10 +12,10 @@ object CustomerRepository extends Controller {
   )
 
   def index = Action {
-    Redirect(routes.CustomerRepository.customers)
+    Redirect(routes.CustomerRepository.present)
   }
 
-  def customers = Action {
+  def present = Action {
     Ok(views.html.customerRepository(Customer.all(), customerForm))
   }
 
@@ -24,7 +24,7 @@ object CustomerRepository extends Controller {
       errors => BadRequest(views.html.customerRepository(Customer.all(), errors)),
       label => {
         Customer.create(label)
-        Redirect(routes.CustomerRepository.customers)
+        Redirect(routes.CustomerRepository.present)
       }
     )
   }

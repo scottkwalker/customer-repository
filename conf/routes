@@ -6,7 +6,7 @@
 GET     /                                   controllers.Start.present
 
 # Customers
-GET     /customer-repository                controllers.CustomerRepository.customers
+GET     /customer-repository                controllers.CustomerRepository.present
 GET     /customer-repository                controllers.CustomerRepository.newCustomer
 POST    /customer-repository/:id/delete     controllers.CustomerRepository.deleteCustomer(id: Long)
 
