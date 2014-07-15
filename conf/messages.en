@@ -8,6 +8,5 @@ start.button = Next
 
 #CustomerRepository
 firstName = First name
-customerRepository.h1 = Customer repository
-customerRepository.h2 = Add a new customer
+customerRepository.h1 = Add a new customer
 customerRepository.submit = Add customer

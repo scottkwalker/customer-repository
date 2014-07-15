@@ -1,38 +1,29 @@
-@(customerForm: Form[String])(implicit lang: Lang)
 
+@(customerForm: Form[String])(implicit lang: Lang)
 @import helper._
 
-<!DOCTYPE html>
+@main(Messages("disposal_of_vehicle.keeperFullName.title")) {
 
-<html>
-<head>
-    <title>@Messages("applicationTitle")</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
-    <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/bootstrap.css")">
-    <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
-    <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
-        </head>
-    <body>
-        <div class="container">
-            <div class="row">
-                <h1>@Messages("customerRepository.h1")</h1>
-                <hr/>
-                <div class="form-group">
-                    <h2>@Messages("customerRepository.h2")</h2>
+<div class="container">
+    <div class="row">
+        <div class="form-group">
+            <h1>@Messages("customerRepository.h1")</h1>
 
-                    @form(routes.CustomerRepository.submit) {
-                    <div class="input-group">
-                        @helper.inputText(customerForm("firstName"), 'id -> "firstName", 'class -> "form-control")
-                    </div>
-                    <div class="btn-group">
-                        <input type="submit" class="btn btn-primary" value="@Messages("customerRepository.submit")">
-                    </div>
-                </div>
+            @form(routes.CustomerRepository.submit) {
+            <div class="input-group">
+                @helper.inputText(customerForm("firstName"), 'id -> "firstName", 'class -> "form-control")
+            </div>
+            <div class="btn-group">
+                <input type="submit" class="btn btn-primary" value="@Messages("customerRepository.submit")">
             </div>
         </div>
-        }
-    </body>
-</html>
+    </div>
+</div>
+}
+}
+
+
+
+
+
+

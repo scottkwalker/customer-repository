@@ -11,14 +11,14 @@ object CustomerRepository extends Controller {
   )
 
   def present = Action {
-    Redirect(routes.CustomerRepository.submit())
+    Ok(views.html.customerRepository(customerForm))
   }
 
   def submit = Action {
     implicit request =>
     customerForm.bindFromRequest.fold(
       formWithErrors => BadRequest(views.html.customerRepository(formWithErrors)),
-    f => Ok("Customer added successfully!")
+      f => Ok("Customer added successfully!")
     )
   }
 }
