@@ -2,7 +2,7 @@
 applicationTitle = Customer repository
 
 #start
-start.h1 = Welcome to the customer repo
+start.h1 = Welcome to the customer repository
 
 #CustomerRepository
 firstName = First name

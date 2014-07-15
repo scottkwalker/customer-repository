@@ -8,9 +8,9 @@ import play.api.test._
 import play.api.test.Helpers._
 
 @RunWith(classOf[JUnitRunner])
-class ApplicationControllerSpec extends Specification {
+class CustomerRepositoryControllerSpec extends Specification {
 
-  "Application" should {
+  "Customer Repository" should {
 
     "send 404 on a bad request" in new WithApplication{
       route(FakeRequest(GET, "/boum")) must beNone

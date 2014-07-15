@@ -7,15 +7,15 @@ import org.junit.runner._
 import play.api.test._
 
 @RunWith(classOf[JUnitRunner])
-class ApplicationIntegrationSpec extends Specification {
+class CustomerRepositoryIntegrationSpec extends Specification {
 
-  "Application" should {
+  "Customer Repository" should {
 
     "work from within a browser" in new WithBrowser {
 
       browser.goTo("http://localhost:" + port)
 
-      browser.pageSource must contain("Welcome to the Customer Repository")
+      browser.pageSource must contain("Welcome to the customer repository")
     }
   }
 }
