@@ -3,28 +3,38 @@
 @import helper._
 
 @main("Customer list") {
+<div class="container">
+    <div class="row">
+        <h1>Customer repository - @customers.size customer(s)</h1>
+        <hr/>
+        <div class="form-group">
+            <ul>
+            @customers.map { customer =>
+                <li>
+                    <p>@customer.firstName</p>p>
 
-<h1>@customers.size customer(s)</h1>
+                    @form(routes.Application.deleteCustomer(customer.id)) {
+                    <div class="btn-group">
+                        <input type="submit" class="form-control" value="Delete">
+                    </div>
+                    }
+                </li>
+            }
+            </ul>
+        </div>
 
-<ul>
-    @customers.map { customer =>
-    <li>
-        <p>@customer.firstName</p>p>
+        <div class="form-group">
+            <h2>Add a new customer</h2>
 
-        @form(routes.Application.deleteCustomer(customer.id)) {
-        <input type="submit" value="Delete">
-        }
-    </li>
-    }
-</ul>
-
-<h2>Add a new customer</h2>
-
-@form(routes.Application.newCustomer) {
-
-@inputText(customerForm("firstName"))
-
-<input type="submit" value="Create">
-
+            @form(routes.Application.newCustomer) {
+            <div class="input-group">
+                @inputText(customerForm("firstName"))
+            </div>
+            <div class="btn-group">
+                <input type="submit" class="btn btn-primary" value="Create">
+            </div>
+        </div>
+    </div>
+</div>
 }
 }
