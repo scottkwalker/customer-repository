@@ -16,12 +16,12 @@ object CustomerRepository extends Controller {
   }
 
   def customers = Action {
-    Ok(views.html.index(Customer.all(), customerForm))
+    Ok(views.html.customerRepository(Customer.all(), customerForm))
   }
 
   def newCustomer = Action { implicit request =>
     customerForm.bindFromRequest.fold(
-      errors => BadRequest(views.html.index(Customer.all(), errors)),
+      errors => BadRequest(views.html.customerRepository(Customer.all(), errors)),
       label => {
         Customer.create(label)
         Redirect(routes.CustomerRepository.customers)

@@ -1,2 +1,9 @@
+#global
+applicationTitle = Customer repository
+
+#start
+start.h1 = Welcome to the customer repo
+
 #CustomerRepository
-firstName=First name
+firstName = First name
+customerRepository.h1 = Customer repository -
