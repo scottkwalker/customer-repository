@@ -3,7 +3,6 @@ package controllers
 import play.api.mvc._
 import play.api.data._
 import play.api.data.Forms._
-import models.Customer
 
 object CustomerRepository extends Controller {
 
@@ -11,24 +10,15 @@ object CustomerRepository extends Controller {
     "firstName" -> nonEmptyText
   )
 
-  def index = Action {
-    Redirect(routes.CustomerRepository.customers)
+  def present = Action {
+    Redirect(routes.CustomerRepository.submit())
   }
 
-  def customers = Action {
-    Ok(views.html.customerRepository(Customer.all(), customerForm))
-  }
-
-  def newCustomer = Action { implicit request =>
+  def submit = Action {
+    implicit request =>
     customerForm.bindFromRequest.fold(
-      errors => BadRequest(views.html.customerRepository(Customer.all(), errors)),
-      label => {
-        Customer.create(label)
-        Redirect(routes.CustomerRepository.customers)
-      }
+      formWithErrors => BadRequest(views.html.customerRepository(formWithErrors)),
+    f => Ok("Customer added successfully!")
     )
   }
-
-  def deleteCustomer(id: Long) = TODO
-
 }

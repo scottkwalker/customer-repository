@@ -6,9 +6,7 @@
 GET     /                                   controllers.Start.present
 
 # Customers
-GET     /customer-repository                controllers.CustomerRepository.customers
-GET     /customer-repository                controllers.CustomerRepository.newCustomer
-POST    /customer-repository/:id/delete     controllers.CustomerRepository.deleteCustomer(id: Long)
+GET     /customer-repository                controllers.CustomerRepository.submit
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file                       controllers.Assets.at(path="/public", file)

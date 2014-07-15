@@ -1,4 +1,4 @@
-@(customers: List[Customer], customerForm: Form[String])(implicit lang: Lang)
+@(customerForm: Form[String])(implicit lang: Lang)
 
 @import helper._
 
@@ -18,33 +18,17 @@
     <body>
         <div class="container">
             <div class="row">
-                <h1>@Messages("customerRepository.h1") @customers.size customer(s)</h1>
+                <h1>@Messages("customerRepository.h1")</h1>
                 <hr/>
                 <div class="form-group">
-                    <ul>
-                    @customers.map { customer =>
-                        <li>
-                            <p>@customer.firstName</p>p>
+                    <h2>@Messages("customerRepository.h2")</h2>
 
-                            @form(routes.CustomerRepository.deleteCustomer(customer.id)) {
-                            <div class="btn-group">
-                                <input type="submit" class="form-control" value="Delete">
-                            </div>
-                            }
-                        </li>
-                    }
-                    </ul>
-                </div>
-
-                <div class="form-group">
-                    <h2>Add a new customer</h2>
-
-                    @form(routes.CustomerRepository.newCustomer) {
+                    @form(routes.CustomerRepository.submit) {
                     <div class="input-group">
                         @helper.inputText(customerForm("firstName"), 'id -> "firstName", 'class -> "form-control")
                     </div>
                     <div class="btn-group">
-                        <input type="submit" class="btn btn-primary" value="Create">
+                        <input type="submit" class="btn btn-primary" value="@Messages("customerRepository.submit")">
                     </div>
                 </div>
             </div>

@@ -3,7 +3,11 @@ applicationTitle = Customer repository
 
 #start
 start.h1 = Welcome to the customer repository
+start.paragraph = This is a sample application to use to get of an idea of how Play & Scala work together along with MVC. Click the button below to navigate to the next page.
+start.button = Next
 
 #CustomerRepository
 firstName = First name
-customerRepository.h1 = Customer repository -
+customerRepository.h1 = Customer repository
+customerRepository.h2 = Add a new customer
+customerRepository.submit = Add customer
