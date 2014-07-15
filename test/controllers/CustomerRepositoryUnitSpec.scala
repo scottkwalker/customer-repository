@@ -1,4 +1,4 @@
-package controller
+package controllers
 
 import org.specs2.mutable._
 import org.specs2.runner._
@@ -9,10 +9,10 @@ import play.api.test.Helpers._
 import controllers.CustomerRepository
 
 @RunWith(classOf[JUnitRunner])
-class CustomerRepositoryControllerSpec extends Specification {
+class CustomerRepositoryUnitSpec extends Specification {
 
-  "Customer Repository" should {
-    "display the page" in new WithApplication{
+  "present" should {
+    "display the page" in new WithApplication {
       val result = CustomerRepository.present(FakeRequest())
       status(result) should beEqualTo(OK)
     }

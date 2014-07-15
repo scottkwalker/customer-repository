@@ -9,8 +9,7 @@ import play.api.test._
 @RunWith(classOf[JUnitRunner])
 class CustomerRepositoryIntegrationSpec extends Specification {
 
-  "Customer Repository" should {
-
+  "go to page" should {
     "display the page" in new WithBrowser {
       val customerRepository = "http://localhost:" + port + "/customer-repository"
 
