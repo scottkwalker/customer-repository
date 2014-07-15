@@ -1,4 +1,4 @@
-@(customers: List[Customer], customerForm: Form[String])
+@(customers: List[Customer], customerForm: Form[String])(implicit lang: Lang)
 
 @import helper._
 
@@ -28,7 +28,7 @@
 
             @form(routes.Application.newCustomer) {
             <div class="input-group">
-                @helper.inputText(customerForm("firstName"), 'id -> "username", 'class -> "form-control", 'placeholder -> "Your first name")
+                @helper.inputText(customerForm("firstName"), 'id -> "firstName", 'class -> "form-control")
             </div>
             <div class="btn-group">
                 <input type="submit" class="btn btn-primary" value="Create">
