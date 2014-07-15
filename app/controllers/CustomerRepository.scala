@@ -11,10 +11,6 @@ object CustomerRepository extends Controller {
     "firstName" -> nonEmptyText
   )
 
-  def index = Action {
-    Redirect(routes.CustomerRepository.present)
-  }
-
   def present = Action {
     Ok(views.html.customerRepository(Customer.all(), customerForm))
   }

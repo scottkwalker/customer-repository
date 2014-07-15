@@ -12,7 +12,7 @@ import controllers.CustomerRepository
 class CustomerRepositoryControllerSpec extends Specification {
 
   "Customer Repository" should {
-    "send 404 on a bad request" in new WithApplication{
+    "display the page" in new WithApplication{
       val result = CustomerRepository.present(FakeRequest())
       status(result) should beEqualTo(OK)
     }
