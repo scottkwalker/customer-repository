@@ -28,7 +28,7 @@
 
             @form(routes.Application.newCustomer) {
             <div class="input-group">
-                @inputText(customerForm("firstName"))
+                @helper.inputText(customerForm("firstName"), 'id -> "username", 'class -> "form-control", 'placeholder -> "Your first name")
             </div>
             <div class="btn-group">
                 <input type="submit" class="btn btn-primary" value="Create">
