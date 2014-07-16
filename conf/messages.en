@@ -10,3 +10,4 @@ start.button = Next
 firstName = First name
 customerRepository.h1 = Add a new customer
 customerRepository.submit = Add customer
+customerRepository.back = Back

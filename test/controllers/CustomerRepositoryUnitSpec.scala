@@ -6,7 +6,6 @@ import org.junit.runner._
 
 import play.api.test._
 import play.api.test.Helpers._
-import controllers.CustomerRepository
 
 @RunWith(classOf[JUnitRunner])
 class CustomerRepositoryUnitSpec extends Specification {
