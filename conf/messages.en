@@ -1,13 +1,15 @@
 #global
-applicationTitle = Customer repository
+application.title = Customer Repository
 
 #start
+start.title = Welcome to the customer repository
 start.h1 = Welcome to the customer repository
 start.paragraph = This is a sample application to use to get of an idea of how Play & Scala work together along with MVC. Click the button below to navigate to the next page.
 start.button = Next
 
 #CustomerRepository
 firstName = First name
+customerRepository.title = Add a new customer
 customerRepository.h1 = Add a new customer
 customerRepository.submit = Add customer
 customerRepository.back = Back

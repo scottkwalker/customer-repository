@@ -2,7 +2,7 @@
 @(customerForm: Form[String])(implicit lang: Lang)
 @import helper._
 
-@main(Messages("disposal_of_vehicle.keeperFullName.title")) {
+@main(Messages("customerRepository.title")) {
 
 <div class="container">
     <div class="row">
@@ -16,7 +16,7 @@
             <div class="btn-group">
                 <div>
                 <input type="submit" class="btn btn-primary" value="@Messages("customerRepository.submit")">&nbsp
-                <a href="@routes.Start.present" class="btn btn-default">@Messages("customerRepository.back")</a>
+                <a id="back" href="@routes.Start.present" class="btn btn-default">@Messages("customerRepository.back")</a>
                 </div>
             </div>
         </div>

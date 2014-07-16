@@ -10,7 +10,7 @@ import play.api.test.Helpers._
 class StartUnitSpec extends Specification {
 
   "present" should {
-    "display the page" in new WithApplication{
+    "present the page" in new WithApplication{
       val result = Start.present(FakeRequest())
       status(result) should beEqualTo(OK)
     }

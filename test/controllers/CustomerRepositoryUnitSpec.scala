@@ -11,7 +11,7 @@ import play.api.test.Helpers._
 class CustomerRepositoryUnitSpec extends Specification {
 
   "present" should {
-    "display the page" in new WithApplication {
+    "present the page" in new WithApplication {
       val result = CustomerRepository.present(FakeRequest())
       status(result) should beEqualTo(OK)
     }
