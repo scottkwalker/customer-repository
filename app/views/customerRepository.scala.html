@@ -8,10 +8,12 @@
     <div class="row">
         <div class="form-group">
             <h1>@Messages("customerRepository.h1")</h1>
+            <p>@Messages("customerRepository.p1")</p>
 
             @form(routes.CustomerRepository.submit) {
             <div class="input-group">
                 @helper.inputText(customerForm("firstName"), 'id -> "firstName", 'class -> "form-control")
+                @helper.inputText(customerForm("middleName"), 'id -> "middleName", 'class -> "form-control")
                 @helper.inputText(customerForm("lastName"), 'id -> "lastName", 'class -> "form-control")
             </div>
             <div class="btn-group">

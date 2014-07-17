@@ -9,11 +9,14 @@ start.button = Next
 
 #CustomerRepository
 firstName = First name
+middleName = middle name
 lastName = Last name
 customerRepository.title = Add a new customer
 customerRepository.h1 = Add a new customer
+customerRepository.p1 = Please enter customer details below for capture
 customerRepository.submit = Add customer
 customerRepository.back = Back
+error.validFirstName = First name must contain letters only
 
 #Success
 success.title = Success

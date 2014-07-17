@@ -1,4 +1,4 @@
 package models
 
-case class Customer(firstName: String, lastName: String)
+case class Customer(firstName: String, middleName: Option[String], lastName: String)
 

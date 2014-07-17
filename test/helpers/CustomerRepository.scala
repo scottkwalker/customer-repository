@@ -9,7 +9,9 @@ object CustomerRepository {
   val addCustomerButton = "#addCustomer"
 
   val firstNameValid = "David"
-  val lastNameValid = "Jones"
   val firstNameBlank = ""
+  val middleNameValid = "Paul"
+  val middleNameBlank = ""
+  val lastNameValid = "Jones"
   val lastNameBlank = ""
 }
