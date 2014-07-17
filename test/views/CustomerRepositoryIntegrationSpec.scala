@@ -24,4 +24,15 @@ class CustomerRepositoryIntegrationSpec extends Specification {
       browser.pageSource must contain("Welcome to the customer repository")
     }
   }
+
+  "submit button" should {
+    "display an error message when mandatory fields are not filled in" in new WithBrowser {
+      val customerRepository = "http://localhost:" + port + "/customer-repository"
+      browser.goTo(customerRepository)
+
+      browser.click("#addCustomer")
+
+      browser.pageSource must contain("Required")
+    }
+  }
 }
