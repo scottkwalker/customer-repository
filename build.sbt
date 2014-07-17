@@ -11,6 +11,10 @@ libraryDependencies ++= Seq(
   "org.mockito" % "mockito-all" % "1.9.5" % "test",
   "joda-time" % "joda-time" % "2.3",
   "org.joda" % "joda-convert" % "1.2"
-)     
+)
+
+ScoverageSbtPlugin.instrumentSettings
+
+CoverallsPlugin.coverallsSettings
 
 play.Project.playScalaSettings
