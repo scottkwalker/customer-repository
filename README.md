@@ -1,7 +1,7 @@
 Customer repository
 ====
 
-Travis-CI build status for master branch [![Build Status](https://travis-ci.org/vivrichards600/customer-repository.svg?branch=master)](https://travis-ci.org/vivrichards600/customer-repository)
+Build status for master branch [![Build Status](https://travis-ci.org/vivrichards600/customer-repository.svg?branch=master)](https://travis-ci.org/vivrichards600/customer-repository)
 
 Code coverage for master branch [![Coverage Status](https://coveralls.io/repos/vivrichards600/customer-repository/badge.png)](https://coveralls.io/r/vivrichards600/customer-repository)
 
