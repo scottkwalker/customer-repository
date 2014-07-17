@@ -8,7 +8,6 @@ class CustomerRepositoryIntegrationSpec extends Specification {
   "go to page" should {
     "display the page" in new WithBrowser {
       val customerRepository = "http://localhost:" + port + "/customer-repository"
-
       browser.goTo(customerRepository)
 
       browser.pageSource must contain("Add a new customer")
@@ -18,7 +17,6 @@ class CustomerRepositoryIntegrationSpec extends Specification {
   "back button" should {
     "display the start page" in new WithBrowser {
       val customerRepository = "http://localhost:" + port + "/customer-repository"
-
       browser.goTo(customerRepository)
 
       browser.click("#back")
@@ -26,6 +24,4 @@ class CustomerRepositoryIntegrationSpec extends Specification {
       browser.pageSource must contain("Welcome to the customer repository")
     }
   }
-
-
 }
