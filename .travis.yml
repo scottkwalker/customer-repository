@@ -11,3 +11,5 @@ matrix:
 
 notifications:
   email: false
+
+script: "sbt coveralls"
