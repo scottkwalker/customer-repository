@@ -4,7 +4,7 @@ import org.specs2.mutable.Specification
 import play.api.test.WithBrowser
 import helpers.CustomerRepository.customerRepositoryUrl
 import helpers.Common.localHost
-import helpers.CustomerRepository.{firstNameInvalid, firstNameValid, firstNameTextBox}
+import helpers.CustomerRepository.{firstNameBlank, firstNameValid, firstNameTextBox, addCustomerButton, backButton}
 import helpers.{CustomerRepository, Start, Success}
 
 class CustomerRepositoryIntegrationSpec extends Specification {
@@ -21,7 +21,7 @@ class CustomerRepositoryIntegrationSpec extends Specification {
     "display the start page" in new WithBrowser {
       browser.goTo(localHost + port + customerRepositoryUrl)
 
-      browser.click(CustomerRepository.backButton)
+      browser.click(backButton)
 
       browser.pageSource must contain(Start.title)
     }
@@ -33,7 +33,7 @@ class CustomerRepositoryIntegrationSpec extends Specification {
 
       browser.fill(firstNameTextBox) `with` firstNameValid
 
-      browser.click(CustomerRepository.addCustomerButton)
+      browser.click(addCustomerButton)
 
       browser.pageSource must contain(Success.title)
     }
@@ -41,9 +41,9 @@ class CustomerRepositoryIntegrationSpec extends Specification {
     "stay on customer repository on incorrect input" in new WithBrowser {
       browser.goTo(localHost + port + customerRepositoryUrl)
 
-      browser.fill(firstNameTextBox) `with` firstNameInvalid
+      browser.fill(firstNameTextBox) `with` firstNameBlank
 
-      browser.click(CustomerRepository.addCustomerButton)
+      browser.click(addCustomerButton)
 
       browser.pageSource must contain(CustomerRepository.title)
     }
