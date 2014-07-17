@@ -4,13 +4,13 @@ import play.api.mvc._
 import play.api.data._
 import play.api.data.Forms._
 import models.Customer
-import mappings.FirstName.firstName
+import mappings.FirstName.firstNameRule
 
 object CustomerRepository extends Controller {
 
   val customerForm = Form(
     mapping(
-      "firstName" -> firstName()
+      "firstName" -> firstNameRule
     )(Customer.apply)(Customer.unapply)
   )
 
@@ -19,8 +19,7 @@ object CustomerRepository extends Controller {
   }
 
   def submit = Action {
-    implicit request =>
-    customerForm.bindFromRequest.fold(
+    implicit request => customerForm.bindFromRequest.fold(
       formWithErrors => BadRequest(views.html.customerRepository(formWithErrors)),
       f => Ok(views.html.success())
     )

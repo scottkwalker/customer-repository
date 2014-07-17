@@ -28,6 +28,20 @@ class CustomerRepositoryFormSpec extends WordSpec with Matchers {
       )
     }
 
+    "reject if name contains numbers" in {
+      firstNameFiller(firstName = "123456").fold(
+        formWithErrors => formWithErrors.errors.length should equal(1),
+        f => fail("An error should occur")
+      )
+    }
+
+    "reject if name contains special characters" in {
+      firstNameFiller(firstName = "$%^").fold(
+        formWithErrors => formWithErrors.errors.length should equal(1),
+        f => fail("An error should occur")
+      )
+    }
+
     "accept if valid name entered" in {
       firstNameFiller(firstName = firstNameValid).fold(
         formWithErrors => fail("An error should occur"),
