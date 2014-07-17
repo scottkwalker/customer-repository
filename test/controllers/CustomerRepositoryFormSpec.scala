@@ -1,6 +1,7 @@
 package controllers
 
 import org.scalatest.{Matchers, WordSpec}
+import helpers.CustomerRepository.{firstNameInvalid, firstNameValid}
 
 class CustomerRepositoryFormSpec extends WordSpec with Matchers {
 
@@ -14,17 +15,12 @@ class CustomerRepositoryFormSpec extends WordSpec with Matchers {
     }
 
     "accept if valid name entered" in {
-//      firstNameFiller(firstName = firstNameValid).fold(
-//        formWithErrors => fail("An error should occur"),
-//        f => f.firstName should equal(firstNameValid)
-//      )
-      pending
-      //ToDo need to fix this test, at present f does not give us access to firstName
+      firstNameFiller(firstName = firstNameValid).fold(
+        formWithErrors => fail("An error should occur"),
+        f => f.firstName should equal(firstNameValid)
+      )
     }
   }
-
-  val firstNameValid = "David"
-  val firstNameInvalid = ""
 
   def firstNameFiller(firstName: String) = {
     CustomerRepository.customerForm.bind(

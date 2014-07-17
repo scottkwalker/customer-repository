@@ -2,7 +2,7 @@ package views
 
 import org.specs2.mutable.Specification
 import play.api.test.WithBrowser
-import helpers.Common._
+import helpers.Common.localHost
 import helpers.Success.successUrl
 import helpers.Success
 
