@@ -14,6 +14,7 @@ class StartIntegrationSpec extends Specification {
       browser.pageSource must contain(Start.title)
     }
   }
+
   "next button" should {
     "display the customer repository page" in new WithBrowser {
       browser.goTo(localHost + port)

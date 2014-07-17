@@ -18,7 +18,7 @@ object CustomerRepository extends Controller {
     implicit request =>
     customerForm.bindFromRequest.fold(
       formWithErrors => BadRequest(views.html.customerRepository(formWithErrors)),
-      f => Ok("Customer added successfully!")
+      f => Ok(views.html.success())
     )
   }
 }

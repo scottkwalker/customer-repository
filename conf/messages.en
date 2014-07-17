@@ -13,3 +13,8 @@ customerRepository.title = Add a new customer
 customerRepository.h1 = Add a new customer
 customerRepository.submit = Add customer
 customerRepository.back = Back
+
+#Success
+success.title = Success
+success.h1 = Success
+success.paragraph = Thank you, your entry has been verified as successful

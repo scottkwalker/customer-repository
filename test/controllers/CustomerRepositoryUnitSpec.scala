@@ -1,19 +1,15 @@
 package controllers
 
-import org.specs2.mutable._
-import org.specs2.runner._
-import org.junit.runner._
-
 import play.api.test._
 import play.api.test.Helpers._
+import org.scalatest.{Matchers, WordSpec}
 
-@RunWith(classOf[JUnitRunner])
-class CustomerRepositoryUnitSpec extends Specification {
+class CustomerRepositoryUnitSpec extends WordSpec with Matchers {
 
   "present" should {
     "present the page" in new WithApplication {
       val result = CustomerRepository.present(FakeRequest())
-      status(result) should beEqualTo(OK)
+      status(result) should equal(OK)
     }
   }
 }

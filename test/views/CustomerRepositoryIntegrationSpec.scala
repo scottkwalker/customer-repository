@@ -25,14 +25,4 @@ class CustomerRepositoryIntegrationSpec extends Specification {
       browser.pageSource must contain(Start.title)
     }
   }
-
-  "submit button" should {
-    "display an error message when mandatory fields are not filled in" in new WithBrowser {
-      browser.goTo(localHost + port + customerRepositoryUrl)
-
-      browser.click(CustomerRepository.addCustomer)
-
-      browser.pageSource must contain(CustomerRepository.firstNameError)
-    }
-  }
 }
