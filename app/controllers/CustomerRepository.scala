@@ -5,12 +5,14 @@ import play.api.data._
 import play.api.data.Forms._
 import models.Customer
 import mappings.FirstName.firstName
+import mappings.LastName.lastName
 
 object CustomerRepository extends Controller {
 
   val customerForm = Form(
     mapping(
-      "firstName" -> firstName()
+      "firstName" -> firstName(),
+      "lastName" -> lastName()
     )(Customer.apply)(Customer.unapply)
   )
 

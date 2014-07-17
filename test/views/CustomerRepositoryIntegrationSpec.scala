@@ -4,7 +4,7 @@ import org.specs2.mutable.Specification
 import play.api.test.WithBrowser
 import helpers.CustomerRepository.customerRepositoryUrl
 import helpers.Common.localHost
-import helpers.CustomerRepository.{firstNameBlank, firstNameValid, firstNameTextBox, addCustomerButton, backButton}
+import helpers.CustomerRepository.{firstNameBlank, firstNameValid, firstNameTextBox, addCustomerButton, backButton, lastNameValid, lastNameTextBox}
 import helpers.{CustomerRepository, Start, Success}
 
 class CustomerRepositoryIntegrationSpec extends Specification {
@@ -30,8 +30,8 @@ class CustomerRepositoryIntegrationSpec extends Specification {
   "submit" should {
     "redirect to success on correct input" in new WithBrowser {
       browser.goTo(localHost + port + customerRepositoryUrl)
-
       browser.fill(firstNameTextBox) `with` firstNameValid
+      browser.fill(lastNameTextBox) `with` lastNameValid
 
       browser.click(addCustomerButton)
 
@@ -40,7 +40,6 @@ class CustomerRepositoryIntegrationSpec extends Specification {
 
     "stay on customer repository on incorrect input" in new WithBrowser {
       browser.goTo(localHost + port + customerRepositoryUrl)
-
       browser.fill(firstNameTextBox) `with` firstNameBlank
 
       browser.click(addCustomerButton)
