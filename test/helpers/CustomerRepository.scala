@@ -1,7 +1,7 @@
 package helpers
 
 object CustomerRepository {
-  val customerRepositoryTitle = "Add a new customer"
+  val title = "Add a new customer"
   val back = "#back"
   val addCustomer = "#addCustomer"
 

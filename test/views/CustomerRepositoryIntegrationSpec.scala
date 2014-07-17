@@ -2,7 +2,8 @@ package Integration
 
 import org.specs2.mutable.Specification
 import play.api.test.WithBrowser
-import helpers.CustomerRepository._
+import helpers.CustomerRepository
+import helpers.Start
 
 class CustomerRepositoryIntegrationSpec extends Specification {
 
@@ -11,7 +12,7 @@ class CustomerRepositoryIntegrationSpec extends Specification {
       val customerRepository = "http://localhost:" + port + "/customer-repository"
       browser.goTo(customerRepository)
 
-      browser.pageSource must contain(customerRepositoryTitle)
+      browser.pageSource must contain(CustomerRepository.title)
     }
   }
 
@@ -20,9 +21,9 @@ class CustomerRepositoryIntegrationSpec extends Specification {
       val customerRepository = "http://localhost:" + port + "/customer-repository"
       browser.goTo(customerRepository)
 
-      browser.click(back)
+      browser.click(CustomerRepository.back)
 
-      browser.pageSource must contain("Welcome to the customer repository")
+      browser.pageSource must contain(Start.title)
     }
   }
 
@@ -31,9 +32,9 @@ class CustomerRepositoryIntegrationSpec extends Specification {
       val customerRepository = "http://localhost:" + port + "/customer-repository"
       browser.goTo(customerRepository)
 
-      browser.click(addCustomer)
+      browser.click(CustomerRepository.addCustomer)
 
-      browser.pageSource must contain(firstNameError)
+      browser.pageSource must contain(CustomerRepository.firstNameError)
     }
   }
 }
