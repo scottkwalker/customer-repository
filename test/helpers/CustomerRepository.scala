@@ -9,4 +9,7 @@ object CustomerRepository {
 
   val firstNameValid = "David"
   val firstNameBlank = ""
+
+  val middleNameValid = "Paul"
+  val middleNameBlank = ""
 }

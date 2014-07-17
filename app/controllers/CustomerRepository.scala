@@ -4,13 +4,15 @@ import play.api.mvc._
 import play.api.data._
 import play.api.data.Forms._
 import models.Customer
-import mappings.FirstName.firstNameRule
+import mappings.FirstName.{firstNameMinLength, firstNameMaxLength}
+import constraints.FirstName.validFirstName
 
 object CustomerRepository extends Controller {
 
   val customerForm = Form(
     mapping(
-      "firstName" -> firstNameRule
+      "firstName" -> (nonEmptyText(firstNameMinLength, firstNameMaxLength) verifying validFirstName),
+      "middleName" -> optional(text)
     )(Customer.apply)(Customer.unapply)
   )
 

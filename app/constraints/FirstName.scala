@@ -11,5 +11,4 @@ object FirstName {
       case false => Invalid(ValidationError("error.validFirstName"))
     }
   }
-
 }

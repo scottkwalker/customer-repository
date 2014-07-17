@@ -1,7 +1,7 @@
 package controllers
 
 import org.scalatest.{Matchers, WordSpec}
-import helpers.CustomerRepository.{firstNameBlank, firstNameValid}
+import helpers.CustomerRepository.{firstNameBlank, firstNameValid, middleNameBlank, middleNameValid}
 
 class CustomerRepositoryFormSpec extends WordSpec with Matchers {
 
@@ -42,17 +42,32 @@ class CustomerRepositoryFormSpec extends WordSpec with Matchers {
       )
     }
 
-    "accept if valid name entered" in {
+    "reject if middle name is valid and first name is blank" in {
+      firstNameFiller(firstName = firstNameBlank, middleName = middleNameValid).fold(
+        formWithErrors => formWithErrors.errors.length should equal(2),
+        f => fail("An error should occur")
+      )
+    }
+
+    "accept if valid first name only is entered" in {
       firstNameFiller(firstName = firstNameValid).fold(
+        formWithErrors => fail("An error should occur"),
+        f => f.firstName should equal(firstNameValid)
+      )
+    }
+
+    "accept if valid first and middle names are entered" in {
+      firstNameFiller(firstName = firstNameValid, middleName = middleNameValid).fold(
         formWithErrors => fail("An error should occur"),
         f => f.firstName should equal(firstNameValid)
       )
     }
   }
 
-  def firstNameFiller(firstName: String) = {
+  def firstNameFiller(firstName: String, middleName: String = middleNameBlank) = {
     CustomerRepository.customerForm.bind(
-      Map("firstName" -> firstName)
+      Map("firstName" -> firstName,
+          "middleName" -> middleName)
     )
   }
 }

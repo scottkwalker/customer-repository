@@ -13,6 +13,7 @@
             @form(routes.CustomerRepository.submit) {
             <div class="input-group">
                 @helper.inputText(customerForm("firstName"), 'id -> "firstName", 'class -> "form-control")
+                @helper.inputText(customerForm("middleName"), 'id -> "middleName", 'class -> "form-control")
             </div>
             <div class="btn-group">
                 <div>

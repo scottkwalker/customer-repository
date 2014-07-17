@@ -9,6 +9,7 @@ start.button = Next
 
 #CustomerRepository
 firstName = First name
+middleName = middle name
 customerRepository.title = Add a new customer
 customerRepository.h1 = Add a new customer
 customerRepository.p1 = Please enter customer details below for capture
