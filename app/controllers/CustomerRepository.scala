@@ -4,9 +4,10 @@ import play.api.mvc._
 import play.api.data._
 import play.api.data.Forms._
 import models.Customer
-import mappings.LastName.lastName
+import mappings.LastName.{lastNameMinLength, lastNameMaxLength}
 import mappings.FirstName.{firstNameMinLength, firstNameMaxLength}
 import constraints.FirstName.validFirstName
+import constraints.LastName.validLastName
 
 object CustomerRepository extends Controller {
 
@@ -14,7 +15,7 @@ object CustomerRepository extends Controller {
     mapping(
       "firstName" -> (nonEmptyText(firstNameMinLength, firstNameMaxLength) verifying validFirstName),
       "middleName" -> optional(text),
-      "lastName" -> lastName()
+      "lastName" -> (nonEmptyText(lastNameMinLength, lastNameMaxLength) verifying validLastName)
     )(Customer.apply)(Customer.unapply)
   )
 
