@@ -9,7 +9,7 @@ start.button = Next
 
 #CustomerRepository
 firstName = First name
-middleName = middle name
+middleName = Middle name
 lastName = Last name
 customerRepository.title = Add a new customer
 customerRepository.h1 = Add a new customer
