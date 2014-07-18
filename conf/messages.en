@@ -17,7 +17,7 @@ customerRepository.p1 = Please enter customer details below for capture
 customerRepository.submit = Add customer
 customerRepository.back = Back
 error.validFirstName = First name must contain letters only
-error.validLastName = Last name must contain letters only
+error.validLastName = Last name must contain letters or hyphens only
 error.validMiddleName = Middle name must contain letters only when entered
 
 #Success
