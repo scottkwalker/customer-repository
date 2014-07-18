@@ -10,7 +10,7 @@ import constraints.FirstName.validFirstName
 import constraints.LastName.validLastName
 import constraints.MiddleName.validMiddleName
 
-object CustomerRepository extends Controller {
+class CustomerRepository extends Controller {
 
   val customerForm = Form(
     mapping(

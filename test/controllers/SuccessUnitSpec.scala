@@ -8,8 +8,9 @@ class SuccessUnitSpec extends WordSpec with Matchers {
 
   "present" should {
     "present the page" in new WithApplication {
-      val result = Success.present(FakeRequest())
-      status(result) should equal(OK)
+      val success = new Success
+
+      status(success.present(FakeRequest())) should equal(OK)
     }
   }
 }

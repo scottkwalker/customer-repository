@@ -127,7 +127,9 @@ class CustomerRepositoryFormSpec extends WordSpec with Matchers {
   }
 
   def nameFiller(firstName: String, middleName: String, lastName: String) = {
-    CustomerRepository.customerForm.bind(
+    val customerRepository = new CustomerRepository
+
+    customerRepository.customerForm.bind(
       Map(
         "firstName" -> firstName,
         "middleName" -> middleName,

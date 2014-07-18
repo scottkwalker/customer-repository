@@ -8,8 +8,9 @@ class CustomerRepositoryUnitSpec extends WordSpec with Matchers {
 
   "present" should {
     "present the page" in new WithApplication {
-      val result = CustomerRepository.present(FakeRequest())
-      status(result) should equal(OK)
+      val customerRepository = new CustomerRepository
+
+      status(customerRepository.present(FakeRequest())) should equal(OK)
     }
   }
 }

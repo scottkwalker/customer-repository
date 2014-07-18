@@ -8,8 +8,9 @@ class StartUnitSpec extends WordSpec with Matchers {
 
   "present" should {
     "present the page" in new WithApplication{
-      val result = Start.present(FakeRequest())
-      status(result) should equal(OK)
+      val start = new Start
+
+      status(start.present(FakeRequest())) should equal(OK)
     }
   }
 }
