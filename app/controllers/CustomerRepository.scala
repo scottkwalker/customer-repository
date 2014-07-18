@@ -27,7 +27,7 @@ class CustomerRepository extends Controller {
   def submit = Action {
     implicit request => customerForm.bindFromRequest.fold(
       formWithErrors => BadRequest(views.html.customerRepository(formWithErrors)),
-      f => Ok(views.html.success())
+      formValid => Ok(views.html.success(formValid))
     )
   }
 }
