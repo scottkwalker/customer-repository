@@ -92,6 +92,18 @@ class CustomerRepositoryFormSpec extends WordSpec with Matchers {
       )
     }
 
+    "accept if last name contains allowed characters -" in {
+      nameFiller(firstNameValid, middleNameValid, lastName = "Smith-Jones").fold(
+        formWithErrors => fail("An error should occur"),
+        f => {
+          f.firstName should equal(firstNameValid)
+          f.middleName should equal(Some(middleNameValid))
+          f.lastName should equal("Smith-Jones")
+        }
+      )
+    }
+
+
     "accept if valid first name and surname only are entered" in {
       nameFiller(firstNameValid, middleNameBlank, lastNameValid).fold(
         formWithErrors => fail("An error should occur"),
