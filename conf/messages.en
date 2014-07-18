@@ -9,7 +9,7 @@ start.button = Next
 
 #CustomerRepository
 firstName = First name
-middleName = Middle name
+middleName = Middle name (optional)
 lastName = Last name
 customerRepository.title = Add a new customer
 customerRepository.h1 = Add a new customer
@@ -18,6 +18,7 @@ customerRepository.submit = Add customer
 customerRepository.back = Back
 error.validFirstName = First name must contain letters only
 error.validLastName = Last name must contain letters only
+error.validMiddleName = Middle name must contain letters only when entered
 
 #Success
 success.title = Success

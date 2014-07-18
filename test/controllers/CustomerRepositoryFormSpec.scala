@@ -43,6 +43,20 @@ class CustomerRepositoryFormSpec extends WordSpec with Matchers {
       )
     }
 
+    "reject if middle name contains special characters" in {
+      nameFiller(firstNameValid, middleName = "&*£", lastNameValid).fold(
+        formWithErrors => formWithErrors.errors.length should equal(1),
+        f => fail("An error should occur")
+      )
+    }
+
+    "reject if middle name contains numbers" in {
+      nameFiller(firstNameValid, middleName = "1234", lastNameValid).fold(
+        formWithErrors => formWithErrors.errors.length should equal(1),
+        f => fail("An error should occur")
+      )
+    }
+
     "reject if last name is less than min length" in {
       nameFiller(firstNameValid, middleNameValid, lastName = "a" * (lastNameMinLength -1)).fold(
         formWithErrors => formWithErrors.errors.length should equal(1),
