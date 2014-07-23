@@ -5,6 +5,7 @@ Build status for master branch [![Build Status](https://travis-ci.org/vivrichard
 
 Code coverage for master branch [![Coverage Status](https://coveralls.io/repos/vivrichards600/customer-repository/badge.png)](https://coveralls.io/r/vivrichards600/customer-repository)
 
+Latest GitHub version [![GitHub version](https://badge.fury.io/gh/vivrichards600%2Fcustomer-repository.svg)](http://badge.fury.io/gh/vivrichards600%2Fcustomer-repository)
 
 This is a Scala sample project. It will consist of:
 
